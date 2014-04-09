@@ -12,7 +12,7 @@ Templates
 Scripts
 -------
 
-##### [`WindowsDiscovery.vbs`]() This script is used to discover several resources on Windows systems.
+##### [`WindowsDiscovery.vbs`](https://github.com/gcaracuel/Zabbix_Templates/blob/master/Windows%20Systems/WindowsDiscovery.vbs) This script is used to discover several resources on Windows systems.
 
 
 License
