@@ -54,6 +54,12 @@ Graphs
   *  VPN tunnel traffic
 
 
+Scripts
+-------
+
+[`RouterDiscoveryZabbix.py`]() A basic script to configure an existent discovery rule with a list (given a CSV) of your router. It will allow you to name your router using 'Visible Name'. Use it in a big firt import or if your big router list will change frecuently.
+
+
 License
 -------
 
