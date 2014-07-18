@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+/usr/bin/python /usr/lib/zabbix/externalscripts/SNMP_Tunnel_Check.py "$1" "$2" "$3" 2>&1

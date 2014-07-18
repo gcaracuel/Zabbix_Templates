@@ -2,37 +2,33 @@ Cisco-Routers-Template
 =================
 
 This template use Zabbix agent to monitor Cisco routers.
-Maybe this will need to be adapter your wiring and interface identification.
 
 
 Items
 -----
 
   *  CPU Usage
-  *  ICMP ping
+  *  ICMP latency
   *  Router name
   *  Temperature
-  *  Uptime
+  *  Uptime in secs
   *  Running config last change
 
-  *  Internal Interface (fa0/0) In-bytes
-  *  External Interface (fa0/1) In-bytes
-  *  Internal Interface (fa0/0) Out-bytes
-  *  External Interface (fa0/1) Out-bytes
+  *  VPN tunnel Uptime
+  *  VPN tunnel IN-Bytes
+  *  VPN tunnel OUT-Bytes
+  *  VPN tunnel Status
 
-  *  VPN tunnel active time in seconds
-  *  VPN tunnel In-bytes
-  *  VPN tunnel Out-bytes
-  *  VPN tunnel status
+  *  [DISCOVERY] Interface IN-Bytes Delta
+  *  [DISCOVERY] Interface OUT-Bytes Delta
 
  
 Triggers
 --------
 
-  *  [Medium] CPU usage is higher than 70%
-  *  [Average] CPU usage is higher than 80%
-  *  [High] CPU usage is higher than 90%
-  *  [Disaster] CPU isage is 100%
+  *  [Warning] CPU usage is higher than 80%
+  *  [Average] CPU usage is higher than 90%
+  *  [High] CPU isage is 100%
 
   *  [High] Router name changed
   *  [High] Router configuration changed
@@ -45,19 +41,26 @@ Triggers
   *  [Medium] Temperature higher than 65ºC
   *  [High] Temperature higher than 70ºC
 
+  *  [Average] VPN tunnel is DOWN
+
 
 Graphs
 ------
 
-  *  Interfaces traffic
-  *  Temperature
+  *  CPU Usage vs router temp
+  *  Latency
   *  VPN tunnel traffic
+
+  *  [DISCOVERY] Interface traffic
 
 
 Scripts
 -------
 
-[`RouterDiscoveryZabbix.py`]() A basic script to configure an existent discovery rule with a list (given a CSV) of your router. It will allow you to name your router using 'Visible Name'. Use it in a big firt import or if your big router list will change frecuently.
+['SNMP_Tunnel_Check.py']() and ['SNMP_Tunnel_Check.sh']() will be executed as a Zabbix external script, please check Zabbix documentation to make it work.
+This script will answer 4 metrics: [IN-Bytes, OUT-Bytes, Status, Uptime] all them sumarized for all split tunnels in the VPn connection.
+
+EXTRA: [`RouterDiscoveryZabbix.py`]() A basic script to configure an existent discovery rule with a list (given a CSV) of your router. It will allow you to name your router using 'Visible Name'. Use it in a big firt import or if your big router list will change frecuently.
 
 
 License
