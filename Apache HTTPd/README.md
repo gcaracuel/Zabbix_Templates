@@ -38,7 +38,9 @@ Triggers
 Graphs
 ------
 
-  *  CPU Usage vs router temp
+  *  Workers Status
+  *  Requests stats (Requests per second and Bytes per request)
+  *  Accesses stats (Total accesses and Request per second)
 
 Scripts
 -------
