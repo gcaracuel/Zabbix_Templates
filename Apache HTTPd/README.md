@@ -32,8 +32,7 @@ Items
 Triggers
 --------
 
-  #####Recomend to create your how trigger to take care of "Waiting for Connection" slot number. Match it to your "MinSpareServer" from "<IfModule prefork.c>
-" directive in httpd.conf
+  ######Recomend to create your how trigger to take care of "Waiting for Connection" slot number. Match it to your "MinSpareServer" from "<IfModule prefork.c>" directive in httpd.conf
 
 Graphs
 ------
