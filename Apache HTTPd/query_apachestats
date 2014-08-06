@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+/usr/bin/python /usr/lib/zabbix/externalscripts/query_apachestats.py "$1" "$2" 2>&1
